@@ -1,0 +1,477 @@
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk-SemiBold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("/assets/fonts/SourceCodePro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("/assets/fonts/SourceCodePro-SemiBold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("/assets/fonts/SourceCodePro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Charter";
+  src: url("/assets/fonts/Charter Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Charter";
+  src: url("/assets/fonts/Charter Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Charter";
+  src: url("/assets/fonts/Charter Bold Italic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: "Charter";
+  src: url("/assets/fonts/Charter Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("/assets/fonts/Lora-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("/assets/fonts/Lora-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: "Lora";
+  src: url("/assets/fonts/Lora-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("/assets/fonts/Lora-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+
+.header-elem {
+  font-family: "Space Grotesk", Helvetica, sans-serif;
+  font-feature-settings: "liga";
+  font-size: 18px;
+  font-weight: 500;
+  color: $text-color;
+  letter-spacing: 1.0px;
+  padding-left: 10px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: transparent;
+    color: $text-color;
+    text-decoration: none;
+  }
+}
+
+.greytext {
+  font-family: "Source Code Pro", monospace;
+  font-size: 16.2px;
+  font-weight: 500;
+  color: $grey-color;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-item {
+  display: flex;
+  align-items: start;
+  margin: 0 0 1rem -24px;
+}
+
+.post-date {
+  @extend .greytext;
+  position: absolute;
+  transform: translateX(calc(-100% - 24px));
+}
+
+.post-title1 {
+  display: flex;
+  flex-direction: column;
+  border-left: $brand-color solid 4px;
+  padding-left: 20px;
+}
+
+.post-link {
+  font-family: "Space Grotesk", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  color: $text-color;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.post-link:hover {
+  background-color: transparent;
+  color: $text-color;
+  text-decoration: none;
+}
+
+.post-tags {
+  font-family: "Space Grotesk", Helvetica, sans-serif;
+  font-size: 16.2px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.87);
+  margin-bottom: 0;
+}
+
+.post-author {
+  color: $text-color;
+  text-decoration: none;
+}
+
+.post-tag {
+  color: rgba(255, 255, 255, 0.87);
+}
+/**
+ * Site header
+ */
+.site-header {
+  padding-top: 10px;
+  position: relative;
+}
+
+.site-title {
+  @extend .header-elem;
+  padding-left: 0px;
+  line-height: $base-line-height * $base-font-size * 2.25;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+}
+
+.site-nav {
+  float: right;
+  line-height: $base-line-height * $base-font-size * 2.25;
+
+  .nav-trigger {
+      display: none;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .page-link {
+    color: $text-color;
+    line-height: $base-line-height;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  @include media-query($on-palm) {
+    position: absolute;
+    top: 9px;
+    right: $spacing-unit * 0.5;
+    background-color: $background-color;
+    border-radius: 5px;
+    text-align: right;
+
+    label[for="nav-trigger"] {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 36px;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .menu-icon {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 26px;
+      line-height: 0;
+      padding-top: 10px;
+      text-align: center;
+
+      > svg {
+        fill: $grey-color-dark;
+      }
+    }
+
+    input ~ .trigger {
+      clear: both;
+      display: none;
+    }
+
+    input:checked ~ .trigger {
+      display: block;
+      padding-bottom: 5px;
+    }
+
+    .page-link {
+      display: block;
+      margin-left: 20px;
+      padding: 5px 10px;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+  padding: $spacing-unit 0;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 500;
+}
+
+.footer-heading {
+  @include relative-font-size(1.125);
+  margin-bottom: $spacing-unit * 0.5;
+}
+
+.contact-list,
+.social-media-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.footer-col-wrapper {
+  @include relative-font-size(0.9375);
+  color: $grey-color;
+  margin-left: -$spacing-unit * 0.5;
+  @extend %clearfix !optional;
+}
+
+.footer-col {
+  float: left;
+  margin-bottom: $spacing-unit * 0.5;
+  padding-left: $spacing-unit * 0.5;
+}
+
+.footer-col-1 {
+  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+  width:         calc(35% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+  width:         calc(20% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+  width:         calc(45% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($on-laptop) {
+  .footer-col-1,
+  .footer-col-2 {
+    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+    width:         calc(50% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-3 {
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+@include media-query($on-palm) {
+  .footer-col {
+    float: none;
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+  padding: $spacing-unit 0;
+  flex: 1;
+}
+
+.page-heading {
+  @include relative-font-size(2);
+}
+
+.post-list-heading {
+  @include relative-font-size(1.75);
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.post-meta {
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 500;
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+.post-link {
+  display: block;
+  @include relative-font-size(1.5);
+}
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+  margin-bottom: $spacing-unit;
+}
+.post-hr {
+	width: 128px;
+	border: 2.5px solid var(--bg-1);
+	margin-top: 12px;
+}
+
+.post-title {
+  @include relative-font-size(2.625);
+  letter-spacing: -1px;
+  line-height: 1;
+	font-family: 'Space Grotesk', Helvetica, sans-serif;
+  font-weight: 500;
+
+
+  @include media-query($on-laptop) {
+    @include relative-font-size(2.25);
+  }
+}
+
+.post-content {
+  margin-bottom: $spacing-unit;
+  margin: 2rem 0;
+	font-family: "Lora", serif;
+  font-size: 18px;
+  
+  p,
+  ul,
+  ol {
+    line-height: 1.35;
+    margin-bottom: 1rem;
+  }
+
+  h1:before,
+  h2:before,
+  h3:before {
+    content: "#";
+    color: var(--accent);
+    font-weight: bold;
+    float: left;
+    margin-left: -19px;
+    position: absolute;
+  }
+
+  h1,
+  h2,
+  .sans {
+    font-family: 'Space Grotesk', Helvetica, sans-serif;
+    font-weight: bold;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  h1{
+    @include relative-font-size(1.5);
+    margin-bottom: 12px;
+  }
+  h2 {
+    position: relative;
+    margin: 1.2rem 0 0.2rem 0;
+    line-height: 24px;
+  
+    @include relative-font-size(1.4);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.15);
+    }
+  }
+
+  details {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: inherit;
+  }
+  
+  summary{
+    margin-left: -17px;
+    cursor: pointer;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  summary::marker{
+    color: $brand-color;
+  }
+
+}

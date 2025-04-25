@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+        <div class="post-item">
+          <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <div class="post-title1">
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            <p class="post-tags">
+              <span class="post-author" >{{post.author}}  </a>  <span class="greytext"> tagged </span>
+              {%- for tag in post.tags %}
+                <span class="post-tag">{{tag}}</span><span class="greytext">, </span>
+              {%- endfor %}
+            </p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>
